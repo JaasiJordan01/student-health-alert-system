@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f8fb;
+  color: #1f2a37;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #0d5c63, #1c8a8a);
+  color: white;
+  padding: 18px 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.page-shell,
+.dashboard-shell,
+.admin-shell {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.hero-content {
+  padding: 24px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.hero-content h1 {
+  font-size: 2.4rem;
+  margin: 10px 0 18px;
+}
+
+.eyebrow {
+  color: #1c8a8a;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+}
+
+.hero-panel {
+  background: #eaf7f6;
+  border-left: 6px solid #1c8a8a;
+  padding: 22px;
+  border-radius: 14px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.primary-btn,
+.secondary-btn {
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.primary-btn {
+  background: #0d5c63;
+  color: white;
+}
+
+.secondary-btn {
+  background: #d9f1ee;
+  color: #0d5c63;
+}
+
+.login-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: 600;
+}
+
+select, button {
+  font-size: 1rem;
+}
+
+select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #c8d9d8;
+  background: #f7fafb;
+}
+
+.student-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.student-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #183549;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f5faf9;
+  border: 1px solid #dcf0ee;
+}
+
+.dashboard-shell {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+}
+
+.profile-card {
+  height: fit-content;
+}
+
+.status-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ecfdf5;
+  color: #166534;
+  border-radius: 999px;
+  padding: 8px 12px;
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.green {
+  background: #22c55e;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.map-placeholder {
+  margin-top: 18px;
+  min-height: 180px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d8f0f0, #a9d9da);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0d5c63;
+  font-weight: 700;
+}
+
+.alert-item {
+  border-left: 6px solid #0d5c63;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.alert-item h4 {
+  margin: 0 0 8px;
+}
+
+.meta {
+  color: #375d6b;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.severity-high {
+  border-left-color: #d93b3b;
+  background: #fff1f1;
+}
+
+.severity-medium {
+  border-left-color: #e59f14;
+  background: #fffaf1;
+}
+
+.severity-low {
+  border-left-color: #2b9d7d;
+  background: #eefcf7;
+}
+
+.admin-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.stat-card {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background: #f3f8f8;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .login-grid,
+  .dashboard-shell,
+  .info-grid,
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}

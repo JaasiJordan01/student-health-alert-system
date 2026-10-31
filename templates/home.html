@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Health Alert System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="brand">UHealth Alert</div>
+      <div class="nav-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('admin_dashboard') }}">Admin</a>
+      </div>
+    </div>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">University Health & Safety</p>
+          <h1>Health alerts, wellness support, and emergency response for students.</h1>
+          <p>
+            Stay informed on epidemic updates, mental wellness guidance, and campus health notices.
+            Students can receive health information and authorized university teams can access location support when required.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#student-login">Student Login</a>
+            <a class="secondary-btn" href="{{ url_for('admin_dashboard') }}">Open Admin Dashboard</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <h3>Live Sample Data</h3>
+          <ul>
+            <li>3 registered students</li>
+            <li>4 active health alerts</li>
+            <li>Location tracking enabled</li>
+            <li>Emergency contacts available</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="login-grid" id="student-login">
+        <div class="card">
+          <h2>Student Login</h2>
+          <form method="POST" action="{{ url_for('login') }}">
+            <label for="role">Login as</label>
+            <select name="role" id="role">
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
+            </select>
+
+            <label for="email">University Email</label>
+            <select name="email" id="email">
+              {% for student in students %}
+                <option value="{{ student.email }}">{{ student.email }}</option>
+              {% endfor %}
+            </select>
+
+            <button type="submit" class="primary-btn">Continue</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>Student Directory</h2>
+          <div class="student-list">
+            {% for student in students %}
+              <a class="student-item" href="{{ url_for('student_dashboard', email=student.email) }}">
+                <span>{{ student.full_name }}</span>
+                <small>{{ student.email }}</small>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

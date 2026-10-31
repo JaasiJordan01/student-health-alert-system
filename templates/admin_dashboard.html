@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="brand">UHealth Alert</div>
+      <div class="nav-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('admin_dashboard') }}">Admin</a>
+      </div>
+    </div>
+
+    <main class="admin-shell">
+      <section class="summary-grid">
+        <div class="card stat-card">
+          <p>Total Students</p>
+          <h3>{{ summaries.student_count }}</h3>
+        </div>
+        <div class="card stat-card">
+          <p>Active Alerts</p>
+          <h3>{{ summaries.alert_count }}</h3>
+        </div>
+        <div class="card stat-card">
+          <p>High Risk Alerts</p>
+          <h3>{{ summaries.high_risk_alerts }}</h3>
+        </div>
+      </section>
+
+      <section class="card section-card">
+        <h2>Student Overview</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Faculty</th>
+              <th>Phone</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for student in students %}
+              <tr>
+                <td>{{ student.full_name }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.faculty }}</td>
+                <td>{{ student.phone_number }}</td>
+                <td>{{ student.latitude if student.latitude is not none else 'N/A' }}, {{ student.longitude if student.longitude is not none else 'N/A' }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card section-card">
+        <h2>Health Alerts</h2>
+        {% for alert in alerts %}
+          <div class="alert-item severity-{{ alert.severity }}">
+            <h4>{{ alert.title }}</h4>
+            <p class="meta">{{ alert.category }} • {{ alert.severity|upper }}</p>
+            <p>{{ alert.description }}</p>
+          </div>
+        {% endfor %}
+      </section>
+    </main>
+  </body>
+</html>
