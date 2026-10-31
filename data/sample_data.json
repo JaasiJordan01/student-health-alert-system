@@ -1,0 +1,69 @@
+{
+  "students": [
+    {
+      "full_name": "Kawuma Mpalanyi",
+      "email": "km275497@students.cavebndish.ac.ug",
+      "phone_number": "+256772123456",
+      "faculty": "Computer Science",
+      "year_of_study": 3,
+      "device_id": "DEV-CRM-7842",
+      "location_enabled": true,
+      "emergency_access": true,
+      "latitude": 0.3476,
+      "longitude": 32.5825,
+      "last_updated": "2026-10-31T08:15:00"
+    },
+    {
+      "full_name": "Amina Nakato",
+      "email": "an440201@students.cavebndish.ac.ug",
+      "phone_number": "+256700445566",
+      "faculty": "Public Health",
+      "year_of_study": 2,
+      "device_id": "DEV-HEA-3104",
+      "location_enabled": true,
+      "emergency_access": true,
+      "latitude": 0.3333,
+      "longitude": 32.5761,
+      "last_updated": "2026-10-31T09:20:00"
+    },
+    {
+      "full_name": "Daniel Opio",
+      "email": "do892101@students.cavebndish.ac.ug",
+      "phone_number": "+256788900112",
+      "faculty": "Engineering",
+      "year_of_study": 4,
+      "device_id": "DEV-ENG-9911",
+      "location_enabled": true,
+      "emergency_access": true,
+      "latitude": 0.3410,
+      "longitude": 32.5890,
+      "last_updated": "2026-10-31T07:45:00"
+    }
+  ],
+  "alerts": [
+    {
+      "title": "Campus Water Safety Notice",
+      "category": "Campus Health",
+      "severity": "medium",
+      "description": "Students are advised to use filtered water points and report any unusual odor or discoloration."
+    },
+    {
+      "title": "Movement and Wellness Update",
+      "category": "Mental Health",
+      "severity": "low",
+      "description": "The university has expanded wellness sessions for stress management and general fitness support."
+    },
+    {
+      "title": "Epidemic Awareness",
+      "category": "Pandemic",
+      "severity": "high",
+      "description": "A viral respiratory illness has been reported in the local community. Students should avoid crowded spaces when possible."
+    },
+    {
+      "title": "Healthy Living Quote",
+      "category": "Wellness",
+      "severity": "low",
+      "description": "Take care of your body. It’s the only place you have to live. — Jim Stovall"
+    }
+  ]
+}

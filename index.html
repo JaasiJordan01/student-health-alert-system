@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UHealth Alert | University Health System</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">UHealth Alert</div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#student-login">Student Login</a>
+        <a href="#admin-dashboard">Admin Dashboard</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">University Health & Safety</p>
+          <h1>Health alerts, wellness support, and emergency student tracking.</h1>
+          <p>
+            A student-first health alert system for epidemic updates, campus wellness guidance,
+            mental health support, and emergency location support using the student’s university email,
+            phone number, and registered device.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#student-login">Student Portal</a>
+            <a class="secondary-btn" href="#admin-dashboard">Admin Monitor</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <h3>Prototype Snapshot</h3>
+          <ul>
+            <li>3 registered students</li>
+            <li>4 active alerts</li>
+            <li>Consent-based tracking</li>
+            <li>Emergency contact support</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="student-login" class="panel-grid">
+        <div class="panel card">
+          <h2>Student Login</h2>
+          <form id="login-form">
+            <label for="student-select">Choose student</label>
+            <select id="student-select"></select>
+            <button type="submit" class="primary-btn">Open dashboard</button>
+          </form>
+        </div>
+
+        <div class="panel card">
+          <h2>Student Directory</h2>
+          <div id="student-list" class="student-list"></div>
+        </div>
+      </section>
+
+      <section id="student-dashboard" class="dashboard-section hidden">
+        <div class="card student-profile">
+          <h2 id="student-name">Student Name</h2>
+          <p><strong>Email:</strong> <span id="student-email"></span></p>
+          <p><strong>Phone:</strong> <span id="student-phone"></span></p>
+          <p><strong>Faculty:</strong> <span id="student-faculty"></span></p>
+          <p><strong>Year:</strong> <span id="student-year"></span></p>
+          <p><strong>Device:</strong> <span id="student-device"></span></p>
+          <div class="status-tag">Tracking enabled</div>
+        </div>
+
+        <div class="card location-card">
+          <h3>Latest Location</h3>
+          <p id="location-text">No location available.</p>
+          <div class="map-box">Map View</div>
+        </div>
+
+        <div class="card emergency-card">
+          <h3>Emergency Contacts</h3>
+          <div id="contacts-list"></div>
+        </div>
+
+        <div class="card alerts-card wide">
+          <h3>Health Alerts & Information</h3>
+          <div id="alerts-list"></div>
+        </div>
+      </section>
+
+      <section id="admin-dashboard" class="admin-section card">
+        <h2>Admin Dashboard</h2>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <span>Total Students</span>
+            <strong id="stat-students">0</strong>
+          </div>
+          <div class="summary-card">
+            <span>Active Alerts</span>
+            <strong id="stat-alerts">0</strong>
+          </div>
+          <div class="summary-card">
+            <span>High Risk Alerts</span>
+            <strong id="stat-risk">0</strong>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Faculty</th>
+                <th>Phone</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody id="student-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
